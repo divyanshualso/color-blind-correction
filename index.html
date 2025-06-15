@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Vision Corrector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Color Vision Corrector</h1>
+
+  <label for="blindType">Select Type:</label>
+  <select id="blindType">
+    <option value="protanopia">Protanopia (Red-weak)</option>
+    <option value="deuteranopia">Deuteranopia (Green-weak)</option>
+    <option value="tritanopia">Tritanopia (Blue-weak)</option>
+  </select>
+
+  <input type="file" id="imageUpload" accept="image/*" />
+
+  <div class="canvas-container">
+    <canvas id="originalCanvas"></canvas>
+    <canvas id="correctedCanvas"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
