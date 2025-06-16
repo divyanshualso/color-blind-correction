@@ -53,7 +53,8 @@ function handleImageUpload(e) {
 
     cCtx.putImageData(frame, 0, 0);
 }
-*/function correctImage(img) {
+*/
+function correctImage(img) {
     oCtx.drawImage(img, 0, 0);
     const frame = oCtx.getImageData(0, 0, img.width, img.height);
     const data = frame.data;
