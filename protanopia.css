@@ -1,0 +1,67 @@
+/* Styles for protanopia.html, adapted from outline.css without canvas-specific rules */
+.content {
+  padding: 20px;
+  text-align: left;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: grey;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  color: #007bff;
+}
+html{
+    height:100%;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+ 
+}
+
+body::before {
+  content: "";
+  position: absolute;
+   height: 100%;
+  top: 0;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-image: url("colorblind2.jpeg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.39;
+  z-index: -1;
+}
+
+main {
+  margin-left: 220px;
+  flex: 1;
+}
