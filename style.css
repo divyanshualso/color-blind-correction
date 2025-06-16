@@ -2,12 +2,23 @@ body {
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
-  background-image: url("colorblind2.jpeg.jpeg");
+  /*background-image: url("colorblind2.jpeg.jpeg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);*/
 }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url("your-image.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* Adjust transparency here (0 = fully transparent, 1 = fully visible) */
+  z-index: -1;  /* Puts image behind the content */
+}
+
 
 .canvas-container {
   display: flex;
