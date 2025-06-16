@@ -2,27 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Color blind corrector</title>
+  <title>Color Vision Corrector</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>A tool for color blinds</h1>
-  <h3>There are three main types of  monochromatism, dichromatism, and anomalous trichromatism. Monochromatism, or complete color blindness, is rare and results in seeing only shades of gray. Dichromatism occurs when two cone types are available, leading to difficulty distinguishing certain colors, like red and green. Anomalous trichromatism is a milder form of color blindness, where all three cone types are present but one or more are abnormal, often resulting in difficulty differentiating between red and green. </h3>
-  
-  <label for="blindType">Select Type:</label>
-  <select id="blindType">
-    <option value="protanopia">Protanopia (Red-weak)</option>
-    <option value="deuteranopia">Deuteranopia (Green-weak)</option>
-    <option value="tritanopia">Tritanopia (Blue-weak)</option>
-  </select>
+  <nav class="sidebar">
+    <ul>
+      <li>
+        <a href="#" class="toggle-submenu">Know More About Color Blindness</a>
+        <!-- Updated sub-menu links to point to new pages -->
+        <ul class="sub-menu">
+          <li><a href="protanopia.html">Protanopia (Red-weak)</a></li>
+          <li><a href="deuteranopia.html">Deuteranopia (Green-weak)</a></li>
+          <li><a href="tritanopia.html">Tritanopia (Blue-weak)</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.color-blind-test.com/color-blind-tests/ishihara-test/ishihara-color-blind-test.html">Ishihara Test</a></li>
+      <li><a href="#">Color Blind Glasses</a></li>
+    </ul>
+  </nav>
 
-  <input type="file" id="imageUpload" accept="image/*" />
+  <main>
+    <h1>Welcome to the Color Blind Solution</h1>
+    <label for="query">Do you have an image for demonstration?</label><br>
+    <input type="radio" id="query" name="imageDemo" value="yes"> Yes
+    <input type="radio" id="queryNo" name="imageDemo" value="no"> No<br><br>
 
-  <div class="canvas-container">
-    <canvas id="originalCanvas"></canvas>
-    <canvas id="correctedCanvas"></canvas>
-  </div>
+    <label for="blindType">Select Type:</label>
+    <select id="blindType">
+      <option value="protanopia">Protanopia (Red-weak)</option>
+      <option value="deuteranopia">Deuteranopia (Green-weak)</option>
+      <option value="tritanopia">Tritanopia (Blue-weak)</option>
+    </select>
+
+    <input type="file" id="imageUpload" accept="image/*" />
+
+    <div class="canvas-container">
+      <canvas id="originalCanvas"></canvas>
+      <canvas id="correctedCanvas"></canvas>
+    </div>
+  </main>
 
   <script src="script.js"></script>
+  <script>
+    document.querySelector('.toggle-submenu').addEventListener('click', function(e) {
+      e.preventDefault();
+      const subMenu = this.nextElementSibling;
+      subMenu.style.display = subMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  </script>
 </body>
 </html>
