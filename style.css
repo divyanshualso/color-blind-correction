@@ -1,33 +1,92 @@
+
+.sidebar {
+  width: 250px;
+  background-color: grey;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  color: #007bff;
+}
+
+
+.sub-menu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.sub-menu li {
+  margin: 10px 0;
+}
+
+.sub-menu li a {
+  font-size: 14px;
+}
+
+
 body {
   font-family: sans-serif;
   text-align: center;
   padding: 20px;
-  /*background-image: url("colorblind2.jpeg.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.15);*/
+  display: flex;
 }
+
+
 body::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-image: url("colorblind2.jpeg.jpg");
+  top: 0; left: 250px; right: 0; bottom: 0;
+  background-image: url("colorblind2.jpeg.jpeg");
   background-size: cover;
   background-position: center;
-  opacity: 0.2; /* Adjust transparency here (0 = fully transparent, 1 = fully visible) */
-  z-index: -1;  /* Puts image behind the content */
+  opacity: 0.39;
+  z-index: -1;
+}
+
+
+main {
+  margin-left: 250px; 
+  flex: 1;
 }
 
 
 .canvas-container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 canvas {
-  border: 1px solid #ccc;
-  max-width: 100%;
+  border: 1px solid black;
+  max-width: 35vw; 
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
