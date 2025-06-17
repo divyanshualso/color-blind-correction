@@ -1,0 +1,149 @@
+.sidebar {
+  width: 200px;
+  background-color: grey;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+  color: #007bff;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  display: flex;
+  margin: 0;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 200px;
+  right: 0;
+  bottom: 0;
+  background-image: url("colorblind2.jpeg.jpeg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.39;
+  z-index: -1;
+}
+
+main {
+  margin-left: 220px;
+  flex: 1;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.address-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-grid label {
+  font-size: 14px;
+}
+
+.address-grid input {
+  margin-bottom: 0;
+}
+
+.delivery-note {
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+  background-color: #ffeb3b; /* Yellow background for highlight */
+  padding: 10px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.cancel-button {
+  background-color: lightgoldenrodyellow; 
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}

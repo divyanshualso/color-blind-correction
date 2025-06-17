@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Details</title>
+  <link rel="stylesheet" href="order-details.css">
+</head>
+<body>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="https://example.com/ishihara-test">Ishihara Test</a></li>
+      <li><a href="colorblindglasses.html">Color Blind Glasses</a></li>
+      <li><a href="protanopia.html">About Protanopia</a></li>
+      <li><a href="index.html">Back to Home</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Provide Your Details</h1>
+    <form id="orderForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required><br><br>
+
+      <label for="additionalPhone">Additional Phone Number:</label>
+      <input type="tel" id="additionalPhone" name="additionalPhone"><br><br>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label>Address:</label>
+      <div class="address-grid">
+        <div>
+          <label for="street">Street:</label>
+          <input type="text" id="street" name="street" required>
+        </div>
+        <div>
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+        </div>
+        <div>
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state" required>
+        </div>
+        <div>
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" required>
+        </div>
+      </div><br>
+
+      <label for="pincode">Pin Code:</label>
+      <input type="text" id="pincode" name="pincode" required><br><br>
+
+      <p class="delivery-note">The delivery will reach the destination within a month.</p>
+
+      <div class="form-buttons">
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-button" onclick="window.location.href='index.html'">Cancel</button>
+      </div>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('orderForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Order details submitted successfully!');
+    });
+  </script>
+</body>
+</html>
