@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Blind Glasses</title>
+  <link rel="stylesheet" href="colorblindglasses.css">
+</head>
+<body>
+  <!-- Sidebar consistent with index.html and protanopia.html -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="https://example.com/ishihara-test">Ishihara Test</a></li>
+      <li><a href="colorblindglasses.html">Color Blind Glasses</a></li>
+      <li><a href="protanopia.html">About Protanopia</a></li>
+      <li><a href="framework.html">Back to Home</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Color Blind Glasses</h1>
+    <div class="glasses-container">
+      <!-- Left side: Placeholder for the image -->
+      <div class="image-placeholder">
+        <!-- Image will be added here by the user -->
+         <img src="cbg.jpeg.jpg" alt="colorblind glasses image" height="400px" width="650px">
+        
+      </div>
+
+      <!-- Right side: Form and MRP -->
+      <div class="glasses-details">
+        <h2>Customize Your Glasses</h2>
+        <form id="glassesForm">
+          <!-- Dropdown for color blindness type -->
+          <label for="blindType">Type of Color Blindness:</label>
+          <select id="blindType" name="blindType" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="protanopia">Protanopia (Red-weak)</option>
+            <option value="deuteranopia">Deuteranopia (Green-weak)</option>
+            <option value="tritanopia">Tritanopia (Blue-weak)</option>
+          </select><br><br>
+
+          <!-- Dropdown for vision condition -->
+          <label for="visionCondition">Vision Condition:</label>
+          <select id="visionCondition" name="visionCondition" required>
+            <option value="" disabled selected>Select condition</option>
+            <option value="myopic">Myopic (Nearsighted)</option>
+            <option value="hypermetropic">Hypermetropic (Farsighted)</option>
+            <option value="progressive">Progressive Lenses</option>
+            <option value="normal">Normal Vision</option>
+          </select><br><br>
+
+          <!-- Conditional input for progressive lenses -->
+          <div id="progressiveDetails" style="display: none;">
+            <label for="prescriptionDetails">Prescription Details:</label><br>
+            <textarea id="prescriptionDetails" name="prescriptionDetails" rows="4" cols="30" placeholder="Enter your prescription details (e.g., ADD power, sphere, cylinder)"></textarea><br><br>
+          </div>
+
+          <!-- MRP display -->
+          <p class="mrp">MRP: <span>₹11,999</span></p>
+
+          <!-- Submit and Back buttons -->
+          <div class="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="button" class="back-button" onclick="window.location.href='framework.html'">Back</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Script to show/hide progressive details and redirect on submit -->
+  <script>
+    document.getElementById('visionCondition').addEventListener('change', function() {
+      const progressiveDetails = document.getElementById('progressiveDetails');
+      progressiveDetails.style.display = this.value === 'progressive' ? 'block' : 'none';
+    });
+
+    document.getElementById('glassesForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      window.location.href = 'order-details.html';
+    });
+  </script>
+</body>
+</html>
